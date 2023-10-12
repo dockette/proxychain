@@ -9,7 +9,7 @@
 </p>
 
 <p align=center>
-  <a href="https://hub.docker.com/r/dockette/nexus/"><img src="https://badgen.net/docker/pulls/dockette/nexus"></a>
+  <a href="https://hub.docker.com/r/dockette/proxychain/"><img src="https://badgen.net/docker/pulls/dockette/proxychain"></a>
   <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
   <a href="https://github.com/sponsors/f3l1x"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
 </p>
