@@ -1,7 +1,7 @@
 <h1 align=center>Dockette / Proxychain</h1>
 
 <p align=center>
-   🎁 Dockerized proxychain forward proxy based on [proxy-chain](https://github.com/apify/proxy-chain/tree/master) library.
+   🎁 Dockerized proxychain forward proxy based on <a href="https://github.com/apify/proxy-chain/tree/master">proxy-chain</a> library.
 </p>
 
 <p align=center>
