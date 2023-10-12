@@ -5,7 +5,7 @@ const CONFIG = {
   VERBOSE: process.env.PROXY_VERBOSE || false,
   AUTH_USER: process.env.PROXY_AUTH_USER || null,
   AUTH_PASSWORD: process.env.PROXY_AUTH_PASSWORD || null,
-  PROXYLIST: Array.from((new String(process.env.PROXY_PROXYLIST || '')).split(/,|\||\n/)).filter(p => p),
+  PROXYLIST: Array.from(new String(process.env.PROXY_PROXYLIST || "").split(/,|\||\n/)).filter((p) => p),
 };
 
 if (CONFIG.PROXYLIST.length <= 0) {
@@ -22,7 +22,7 @@ const server = new ProxyChain.Server({
     };
 
     if (CONFIG.AUTH_USER && CONFIG.AUTH_PASSWORD) {
-      prepare.requestAuthentication = username !== "bob" || password !== "TopSecret";
+      prepare.requestAuthentication = username !== CONFIG.AUTH_USER || password !== CONFIG.AUTH_PASSWORD;
     }
 
     return prepare;
