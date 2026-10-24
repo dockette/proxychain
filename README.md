@@ -35,6 +35,11 @@ docker run \
 - `PROXY_AUTH_PASSWORD` - default(null) - Basic auth
 - `PROXY_PROXYLIST` - default([]) - List of forward proxies
 
+## Versions
+
+The release version is the date in [`VERSION`](VERSION). CI pushes `latest` also as `dockette/proxychain:<VERSION>`.
+To release, run `make release`, commit and push to `master`.
+
 ## Development
 
 See [how to contribute](https://contributte.org/contributing.html) to this package.
