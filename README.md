@@ -1,7 +1,7 @@
 <h1 align=center>Dockette / Proxychain</h1>
 
 <p align=center>
-   🎁 Dockerized proxychain forward proxy based on <a href="https://github.com/apify/proxy-chain/tree/master">proxy-chain</a> library.
+   🎁 Forward proxy that chains other proxies.
 </p>
 
 <p align=center>
@@ -9,42 +9,51 @@
 </p>
 
 <p align=center>
+  <a href="https://github.com/dockette/proxychain/actions"><img src="https://github.com/dockette/proxychain/actions/workflows/docker.yml/badge.svg"></a>
   <a href="https://hub.docker.com/r/dockette/proxychain/"><img src="https://badgen.net/docker/pulls/dockette/proxychain"></a>
-  <a href="https://bit.ly/ctteg"><img src="https://badgen.net/badge/support/gitter/cyan"></a>
   <a href="https://github.com/sponsors/f3l1x"><img src="https://badgen.net/badge/sponsor/donations/F96854"></a>
+  <a href="https://github.com/orgs/dockette/discussions"><img src="https://badgen.net/badge/support/discussions/blue"></a>
 </p>
 
 -----
 
+Dockerized forward proxy based on the [proxy-chain](https://github.com/apify/proxy-chain/tree/master) library.
+
 ## Usage
 
-```
-docker run \
-  -it \
-  --rm \
-  -p 8000:8000 \
-  -e PROXY_PROXYLIST=1.2.3.4:8000 \
-  dockette/proxychain
+```sh
+docker run -it --rm -p 8000:8000 -e PROXY_PROXYLIST=1.2.3.4:8000 dockette/proxychain:latest
 ```
 
-## Documentation
+## Configuration
 
-- `PROXY_PORT` - default(8000) - Server listed on
-- `PROXY_VERBOSE` - default(false) - More verbose mode
-- `PROXY_AUTH_USER` - default (null) - Basic auth
-- `PROXY_AUTH_PASSWORD` - default(null) - Basic auth
-- `PROXY_PROXYLIST` - default([]) - List of forward proxies
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PROXY_PORT` | `8000` | Port the server listens on |
+| `PROXY_VERBOSE` | `false` | More verbose mode |
+| `PROXY_AUTH_USER` | `null` | Basic auth user |
+| `PROXY_AUTH_PASSWORD` | `null` | Basic auth password |
+| `PROXY_PROXYLIST` | `[]` | List of forward proxies |
+
+## Versions
+
+| Version | Release |
+|---------|---------|
+| `dockette/proxychain:YYYY.MM.DD` | release `YYYY.MM.DD` |
+| `dockette/proxychain:latest` | latest build of `master` |
+
+Releases are listed on [GitHub](https://github.com/dockette/proxychain/releases).
 
 ## Development
 
-See [how to contribute](https://contributte.org/contributing.html) to this package.
+```sh
+make build          # build the image
+make run            # run the proxy, publishing port 8080
+make version        # print VERSION
+make release        # set today's date in VERSION
+```
 
-This package is currently maintaining by these authors.
+## Maintenance
 
-<a href="https://github.com/f3l1x">
-    <img width="80" height="80" src="https://avatars2.githubusercontent.com/u/538058?v=3&s=80">
-</a>
-
------
-
-Consider to [support](https://github.com/sponsors/f3l1x) **f3l1x**. Also thank you for using this package.
+See [how to contribute](https://github.com/dockette/.github/blob/master/CONTRIBUTING.md) to this package. Consider to
+[support](https://github.com/sponsors/f3l1x) **f3l1x**. Thank you for using this package.
